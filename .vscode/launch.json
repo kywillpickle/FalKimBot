@@ -1,0 +1,43 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Bot",
+            "request": "launch",
+            "mainClass": "Bot",
+            "projectName": "JDA"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "JDA"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MessageListenerExample",
+            "request": "launch",
+            "mainClass": "MessageListenerExample"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MessageListenerExample",
+            "request": "launch",
+            "mainClass": "MessageListenerExample",
+            "projectName": "JDA"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "bot.Main"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Bot",
+            "request": "launch",
+            "mainClass": "bot.Bot"
+        }
+    ]
+}
