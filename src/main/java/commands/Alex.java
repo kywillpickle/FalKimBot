@@ -15,18 +15,18 @@ import javax.security.auth.login.LoginException;
 import java.util.List;
 import java.util.Random;
 
-public class Kyle
+public class Alex
 {
     //custom commands
-    public static void ping(String msg, MessageChannel channel)
+    public static void psing(String msg, MessageChannel channel)
         {
-            if (msg.equals("!ping"))
+            if (msg.equals("!psing"))
             {
                 //This will send a message, "pong!", by constructing a RestAction and "queueing" the action with the Requester.
                 // By calling queue(), we send the Request to the Requester which will send it to discord. Using queue() or any
                 // of its different forms will handle ratelimiting for you automatically!
 
-                channel.sendMessage("pong!").queue();
+                channel.sendMessage("psong!").queue();
             }
         }
 }
