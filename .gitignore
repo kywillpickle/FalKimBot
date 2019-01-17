@@ -2,6 +2,7 @@
 config.json
 tokens.json
 src/test/
+src/main/java/key
 
 # music files
 *.mp3

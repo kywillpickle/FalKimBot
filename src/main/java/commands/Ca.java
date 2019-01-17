@@ -12,21 +12,19 @@ import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
-public class Casey
+public class Ca
 {
     //custom commands
     public static void pwing(String msg, MessageChannel channel)
+    {
+        if (msg.equals("&pwing"))
         {
-            if (msg.equals("!pwing"))
-            {
-                //This will send a message, "pong!", by constructing a RestAction and "queueing" the action with the Requester.
-                // By calling queue(), we send the Request to the Requester which will send it to discord. Using queue() or any
-                // of its different forms will handle ratelimiting for you automatically!
+            //This will send a message, "pwong!", by constructing a RestAction and "queueing" the action with the Requester.
+            // By calling queue(), we send the Request to the Requester which will send it to discord.
 
-                channel.sendMessage("pwong!").queue();
-            }
+            channel.sendMessage("pwong!").queue();
         }
+    }
 }

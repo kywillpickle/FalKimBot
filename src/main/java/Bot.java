@@ -20,11 +20,12 @@ public class Bot extends ListenerAdapter
         try
         {
             JDA jda = new JDABuilder(AccountType.BOT)
-                    .setToken("NTMzNzEwMjYzNzc4ODAzNzEy.DxvA7g.Dmo5AdhOFKcoYOUFkO-LRQi_1Rk")
+                    .setToken(key.Key.getKey())
                     .build();
             jda.addEventListener(new Bot());
             jda.awaitReady();
-            System.out.println("Finished Building JDA!");
+            System.out.println("Finished building PKJR!");
+            jda.getPresence().setGame(Game.playing("reformed- use \"&\""));
         }
         //makes sure the runner know what problems are when they occur
         catch (LoginException e)
@@ -93,9 +94,16 @@ public class Bot extends ListenerAdapter
 
             System.out.printf("[GRP: %s]<%s>: %s\n", groupName, author.getName(), msg);
         }
-        commands.Alex.psing(msg, channel);
-        commands.Kyle.ping(msg, channel);
-        commands.Casey.pwing(msg, channel);
-        commands.Simon.pling(msg, channel);
+        //calls specific (working) commands to call from command files
+        commands.Ky.ping(msg, channel);
+        commands.Ky.countdown(msg, channel);
+
+        commands.Al.psing(msg, channel);
+
+        commands.Ca.pwing(msg, channel);
+
+        commands.Si.pling(msg, channel);
+
+        commands.Ra.pfing(msg, channel);
     }
 }
