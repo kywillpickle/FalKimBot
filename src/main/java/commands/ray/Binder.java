@@ -22,7 +22,7 @@ public class Binder extends Master {
 
     private static boolean systemErrored = false;
 
-    public static String getResponse(String str) {
+    protected static String getResponse(String str) {
         try {
             str = str.toLowerCase();
             // CHECK FOR CLEAR
@@ -73,7 +73,7 @@ public class Binder extends Master {
         return bind;
     }
 
-    public static String bindString(String str) {
+    private static String bindString(String str) {
         try {
             str = str.substring(6);
         } catch (Exception e) {
@@ -96,7 +96,7 @@ public class Binder extends Master {
         return "Binded ``" + splited[0] + "`` with ``" + splited[1] + "``";
     }
 
-    public static String replaceBinding(String[] splited) {
+    private static String replaceBinding(String[] splited) {
         boolean found = false;
         for (int i = 0; i < bindLogger.getLines(); i++) {
             if (i % 2 == 1) { // odd num is value
@@ -116,7 +116,7 @@ public class Binder extends Master {
         return null;
     }
 
-    public static String unbind(String str) {
+    private static String unbind(String str) {
         try {
             str = str.substring(8);
 
@@ -144,12 +144,12 @@ public class Binder extends Master {
         }
     }
 
-    public static String findBinding(String str) {
+    private static String findBinding(String str) {
         // System.out.println("Finding " + str + " in dictioanry");
         return bindings.get(str);
     }
 
-    public static boolean restoreBindings() {
+    private static boolean restoreBindings() {
         try {
             String pastBind = null;
             bindings = new Hashtable<String, String>(); 
@@ -173,7 +173,7 @@ public class Binder extends Master {
         }
     }
 
-    public static boolean initialize() {
+    protected static boolean initialize() {
         return restoreBindings();
     }
 
