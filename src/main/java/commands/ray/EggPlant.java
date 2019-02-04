@@ -51,7 +51,11 @@ public class EggPlant {
 
             loopMessages(pastMessages);
 
-            return "Reacted eggplant emoji" + (number > 1 ? "s" : "") +  " to the past ``" + number + "`` messages in " + targetedChannelName;
+            if (number > 1) {
+                return "Reacted ``" + number + "`` eggplant emojis to the past " + number + " messages in " + targetedChannelName;
+            } else {
+                return "Reacted one eggplant emoji in " + targetedChannelName;
+            } 
         } catch (Exception e) {
             e.printStackTrace();
             return "Error: " + e.getMessage();
