@@ -22,7 +22,6 @@ public class EggPlant {
 
             // System.out.println(event.getChannel().getId());
             if (event.getChannel().getId() == targetedChannelID) {
-                // System.out.println("yes");
                 addEmote(event.getMessage());
             }
 
@@ -38,7 +37,7 @@ public class EggPlant {
 
             int number;
             try {
-                number = Integer.parseInt(str.substring(10));
+                number = Integer.parseInt(str.substring(5));
             } catch (NumberFormatException e) {
                 return errorSyntax;
             }
@@ -52,7 +51,7 @@ public class EggPlant {
 
             loopMessages(pastMessages);
 
-            return "Reacted eggplant emoji to the past " + number + " in " + targetedChannelName;
+            return "Reacted eggplant emoji" + (number > 1 ? "s" : "") +  " to the past ``" + number + "`` messages in " + targetedChannelName;
         } catch (Exception e) {
             e.printStackTrace();
             return "Error: " + e.getMessage();
