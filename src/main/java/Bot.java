@@ -104,6 +104,6 @@ public class Bot extends ListenerAdapter
 
         commands.Si.pling(msg, channel);
 
-        commands.Ra.messageReceived(msg, channel);
+        commands.ray.Master.messageReceived(msg, channel, event);
     }
 }
