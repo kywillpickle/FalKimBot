@@ -19,7 +19,7 @@ public class Ra {
 
     public static void messageReceived(String message, MessageChannel channel) {
         channel.sendMessage(Calculator.getResponse(message)).queue();
-    }
+    }//test
 
     /************** CALCULATOR **************/
     private static class Calculator {
