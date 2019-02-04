@@ -12,10 +12,13 @@ public class EggPlant {
     private static MessageHistory annoucements = null;
     private static String targetedChannelID = "533797858629910558";
     private static String targetedChannelName = "announcements";
+    private static String addSyntax = "&egg (number)";
+    private static String helpMessage = "Add egg in announcements: ``[" + addSyntax + "]``";
+    private static String errorSyntax = "Error: add egg syntax ``[" + addSyntax + "]``";
 
     protected static String getResponse(MessageReceivedEvent event) {
         try {
-            String str = event.getMessage().getContentDisplay();
+            String str = event.getMessage().getContentDisplay().toLowerCase();
 
             // System.out.println(event.getChannel().getId());
             if (event.getChannel().getId() == targetedChannelID) {
@@ -23,15 +26,22 @@ public class EggPlant {
                 addEmote(event.getMessage());
             }
 
-            if (!str.toLowerCase().startsWith("&egg"))
+            if (!str.startsWith("&egg"))
                 return null;
+            if (str.equals("&egg") || str.equals("&egg help"))
+                 return helpMessage;
             if (annoucements == null) {
                 annoucements = new MessageHistory(event.getGuild().getTextChannelById(targetedChannelID));
             }
 
             RestAction<List<Message>> pastMessages;
 
-            int number = Integer.parseInt(str.substring(10));
+            int number;
+            try {
+                number = Integer.parseInt(str.substring(10));
+            } catch (NumberFormatException e) {
+                return errorSyntax;
+            }
 
             if (number > 99)
                 number = 99;
@@ -45,8 +55,8 @@ public class EggPlant {
             return "Reacted eggplant emoji to the past " + number + " in " + targetedChannelName;
         } catch (Exception e) {
             e.printStackTrace();
+            return "Error: " + e.getMessage();
         }
-        return null;
     }
 
     private static RestAction<List<Message>> getPastMessages(int n) {

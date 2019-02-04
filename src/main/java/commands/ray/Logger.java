@@ -238,37 +238,34 @@ public class Logger {
     }
 
     protected void clearFile() {
-        if (file.exists()) {
-            file.delete();
-            try {
-                file.createNewFile();
+        try {
+            List<String> fileContent = new ArrayList<>();
 
-                reader = new LineNumberReader(new FileReader(file));
-                fr = new FileReader(file);
-
-                bw = new BufferedWriter(fw = new FileWriter(file, true));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Files.write(Paths.get(file.getPath()), fileContent, StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     protected void replaceLine(int i, String str) {
         try {
-            // String line = "";
-            // clearFile();
-            // while ((line = reader.readLine()) != null) {
-            // if (reader.getLineNumber() == i) {
-            // line = str;
-            // }
-            // bw.write(line);; //MODIFIED, SOURCE:
-            // https://java.happycodings.com/core-java/code69.html
-            // }
-
             List<String> fileContent = new ArrayList<>(Files
                     .readAllLines(Paths.get(FILE_PATH + fileSeparator + FILE_NAME + ".txt"), StandardCharsets.UTF_8));
 
             fileContent.set(i, str);
+
+            Files.write(Paths.get(file.getPath()), fileContent, StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void deleteLine(int i) {
+        try {
+            List<String> fileContent = new ArrayList<>(Files
+                    .readAllLines(Paths.get(FILE_PATH + fileSeparator + FILE_NAME + ".txt"), StandardCharsets.UTF_8));
+
+            fileContent.remove(i);
 
             Files.write(Paths.get(file.getPath()), fileContent, StandardCharsets.UTF_8);
             // for (String content : fileContent) {

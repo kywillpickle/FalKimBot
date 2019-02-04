@@ -30,9 +30,12 @@ public class Master {
             // }
 
             // Binder
+            if (!message.startsWith("&"))
+                return;
             if (!binderInitialized) {
-                Binder.initialize();
                 binderInitialized = true;
+                if (!Binder.initialize())
+                    channel.sendMessage("Binder initalization errored").queue();
             }
             response = Binder.getResponse(message);
             // System.out.println(response);
