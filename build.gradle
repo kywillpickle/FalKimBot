@@ -23,3 +23,5 @@ jar {
         attributes 'Main-Class': 'Bot'
     }
 }
+
+task stage(dependsOn: ['jar'])

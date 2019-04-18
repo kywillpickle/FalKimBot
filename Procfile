@@ -1,0 +1,1 @@
+worker: java -jar build/libs/fal-kim-bot-1.0-SNAPSHOT.jar
