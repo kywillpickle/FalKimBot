@@ -24,4 +24,4 @@ jar {
     }
 }
 
-task stage(dependsOn: 'jar')
+task stage(dependsOn: 'shadowJar')
