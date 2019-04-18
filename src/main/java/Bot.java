@@ -12,10 +12,12 @@ import java.util.Map;
 
 public class Bot extends ListenerAdapter {
     public static void main(String[] args) throws Exception {
-        Dotenv dotenv = Dotenv.load();
+
+//        Dotenv dotenv = Dotenv.load();
 
         try {
-            String key = dotenv.get("TOKEN");
+//            String key = dotenv.get("TOKEN");
+            String key = System.getenv().get("TOKEN");
             System.out.println(key);
 
             JDA jda = new JDABuilder(AccountType.BOT)
