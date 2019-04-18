@@ -1,6 +1,6 @@
 plugins {
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '4.0.0'
 }
 
 version '1.0-SNAPSHOT'
@@ -24,4 +24,4 @@ jar {
     }
 }
 
-task stage(dependsOn: ['jar'])
+task stage(dependsOn: 'jar')
