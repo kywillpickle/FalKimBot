@@ -1,0 +1,36 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# project files
+config.json
+tokens.json
+src/test/
+.env
+
+# music files
+*.mp3
+*.aac
+*.m4a
+*.wav
+*.flac
+*.ogg
+
+# gradle
+/build/
+/.gradle/
+/out/
+
+# eclipse files
+.classpath
+.project
+.settings/
+/bin/
+
+# intellij files
+/.idea/
+*.iml
+*.ipr
+*.iws
