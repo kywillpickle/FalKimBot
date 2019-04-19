@@ -21,7 +21,7 @@ public class EggPlant {
             String str = event.getMessage().getContentDisplay().toLowerCase();
 
             // System.out.println(event.getChannel().getId());
-            if (event.getChannel().getId() == targetedChannelID) {
+            if (event.getChannel().getId().equals(targetedChannelID)) {
                 addEmote(event.getMessage());
             }
 

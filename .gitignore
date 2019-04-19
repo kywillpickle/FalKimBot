@@ -34,3 +34,6 @@ src/test/
 *.iml
 *.ipr
 *.iws
+
+#vsc files
+.vscode

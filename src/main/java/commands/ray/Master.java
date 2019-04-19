@@ -1,31 +1,16 @@
 package commands.ray;
 
-import net.dv8tion.jda.client.entities.Group;
-import net.dv8tion.jda.core.AccountType;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.JDABuilder;
-import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.entities.*;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.core.exceptions.PermissionException;
-import net.dv8tion.jda.core.exceptions.RateLimitedException;
-import net.dv8tion.jda.core.hooks.ListenerAdapter;
-import javax.security.auth.login.LoginException;
-
-import commands.ray.calculator.Calculator;
 import net.dv8tion.jda.core.entities.MessageChannel;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptEngine;
-import javax.script.ScriptException;
 
-//@Author Ray //
 public class Master {
     private static boolean binderInitialized = false;
 
-    public static void messageReceived(String message, MessageChannel channel, MessageReceivedEvent event) {
+    public static void messageReceived(MessageReceivedEvent event) {
         try {
             String response = null;
-
+            final String message = event.getMessage().getContentRaw();
+            final MessageChannel channel = event.getChannel();
             // Binder
             if (!message.startsWith("&"))
                 return;
