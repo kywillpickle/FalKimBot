@@ -1,7 +1,6 @@
 package commands.ray;
 
 import commands.ray.calculator.Calculator;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 public class CalculatorManager {
 

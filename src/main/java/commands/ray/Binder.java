@@ -2,7 +2,6 @@ package commands.ray;
 
 import java.util.Dictionary;
 import java.util.Hashtable;
-import java.util.stream.Stream;
 
 public class Binder extends Master {
 
@@ -18,7 +17,7 @@ public class Binder extends Master {
     private static String errorBindSyntax = "Error: bind syntax: ``[" + bindSyntax + "]``";
     private static String errorUnbindSyntax = "Error: unbind syntax: ``[" + unbindSyntax + "]``";
     private static String helpMessage = "Bind syntax: ``[" + bindSyntax + "]``\nUnbind syntax: ``[" + unbindSyntax
-    + "]``\nClear syntax (recommended to only use when system error): ``[" + clearSyntax + "]``";
+            + "]``\nClear syntax (recommended to only use when system error): ``[" + clearSyntax + "]``";
 
     private static boolean systemErrored = false;
 
@@ -152,7 +151,7 @@ public class Binder extends Master {
     private static boolean restoreBindings() {
         try {
             String pastBind = null;
-            bindings = new Hashtable<String, String>(); 
+            bindings = new Hashtable<String, String>();
             for (int i = 0; i <= bindLogger.getLines(); i++) {
                 String line = bindLogger.readLine(i);
                 // System.out.println("Line: " + line);

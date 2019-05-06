@@ -14,8 +14,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
 import java.util.List;
 import java.util.ArrayList;
 import java.io.LineNumberReader;
@@ -30,7 +28,6 @@ public class Logger {
     private FileReader fr;
     private static String fileSeparator = System.getProperty("file.separator"); // Don't replace with '\'
     private LineNumberReader reader;
-    private String absolutePath;
 
     // CONFIG
     private final boolean UNIQUE_ERRORS_ONLY;
