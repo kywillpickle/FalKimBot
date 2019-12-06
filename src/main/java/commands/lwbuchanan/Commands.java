@@ -1,4 +1,4 @@
-package commands;
+package commands.lwbuchanan;
 
 import net.dv8tion.jda.client.entities.Group;
 import net.dv8tion.jda.core.AccountType;
@@ -14,17 +14,17 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import javax.security.auth.login.LoginException;
 import java.util.*;
 
-public class Ca
+public class Commands
 {
     //custom commands
-    public static void pwing(String msg, MessageChannel channel)
+    public static void pzing(String msg, MessageChannel channel)
     {
-        if (msg.equals("&pwing"))
+        if (msg.equals("&pzing"))
         {
-            //This will send a message, "pwong!", by constructing a RestAction and "queueing" the action with the Requester.
+            //This will send a message, "pzong!", by constructing a RestAction and "queueing" the action with the Requester.
             // By calling queue(), we send the Request to the Requester which will send it to discord.
 
-            channel.sendMessage("pwong!").queue();
+            channel.sendMessage("pzong!").queue();
         }
     }
 }

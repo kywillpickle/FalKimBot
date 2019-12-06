@@ -1,4 +1,4 @@
-package commands;
+package commands.notahackr;
 
 import net.dv8tion.jda.client.entities.Group;
 import net.dv8tion.jda.core.AccountType;
@@ -14,17 +14,17 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import javax.security.auth.login.LoginException;
 import java.util.*;
 
-public class Al
+public class Commands
 {
     //custom commands
-    public static void psing(String msg, MessageChannel channel)
+    public static void poing(String msg, MessageChannel channel)
     {
-        if (msg.equals("&psing"))
+        if (msg.equals("&poing"))
         {
-            //This will send a message, "psong!", by constructing a RestAction and "queueing" the action with the Requester.
+            //This will send a message, "poong!", by constructing a RestAction and "queueing" the action with the Requester.
             // By calling queue(), we send the Request to the Requester which will send it to discord.
 
-            channel.sendMessage("psong!").queue();
+            channel.sendMessage("poong!").queue();
         }
     }
 }

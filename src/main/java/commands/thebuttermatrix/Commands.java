@@ -1,4 +1,4 @@
-package commands;
+package commands.thebuttermatrix;
 
 import net.dv8tion.jda.client.entities.Group;
 import net.dv8tion.jda.core.AccountType;
@@ -17,7 +17,7 @@ import java.time.*;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.ChronoUnit;
 
-public class Ky
+public class Commands
 {
     //custom commands
     public static void ping(String msg, MessageChannel channel)
@@ -44,9 +44,12 @@ public class Ky
             //Create the hours, minutes, etc. by converting everything into seconds...
             int secRightNow = date.getDayOfYear()*86400 + date.getHour()*3600 + date.getMinute()*60 + date.getSecond();
             //February 19th, 2019 @ 8:59 and 59 seconds
-            int secEndOfSeason = (50)*86400 + (20)*3600 + (59)*60 + (59);
+            int secEndOfSeason = (4)*86400 + (0)*3600 + (0)*60 + (0);
             int difference = secEndOfSeason - secRightNow;
-
+            if(difference<0)
+            {
+                difference = difference + 31536000;
+            }
             //...and then back again
             int days = difference/86400;
             int hours = difference/3600 - days*24;
@@ -64,7 +67,18 @@ public class Ky
                 }
             }
 
-            channel.sendMessage("T-minus "+days+" "+timeArr[0]+", "+hours+" "+timeArr[1]+", "+minutes+" "+timeArr[2]+", and "+seconds+" "+timeArr[3]+".").queue();
+            channel.sendMessage("T-minus "+days+" "+timeArr[0]+", "+hours+" "+timeArr[1]+", "+minutes+" "+timeArr[2]+", and "+seconds+" "+timeArr[3]+" until build season starts!").queue();
+        }
+    }
+    public static void pid(String msg, MessageChannel channel) {
+        if(msg.equals("&pid?")) {
+            Random sequence = new Random();
+            if(sequence.nextBoolean()) {
+                channel.sendMessage("Yes.").queue();
+            }
+            else {
+                channel.sendMessage("No.").queue();
+            }
         }
     }
 }

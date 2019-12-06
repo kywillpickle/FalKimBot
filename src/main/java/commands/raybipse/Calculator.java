@@ -1,4 +1,4 @@
-package commands.ray;
+package commands.raybipse;
 
 import java.util.concurrent.ThreadLocalRandom;
 

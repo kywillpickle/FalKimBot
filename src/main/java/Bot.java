@@ -95,15 +95,22 @@ public class Bot extends ListenerAdapter
             System.out.printf("[GRP: %s]<%s>: %s\n", groupName, author.getName(), msg);
         }
         //calls specific (working) commands to call from command files
-        commands.Ky.ping(msg, channel);
-        commands.Ky.countdown(msg, channel);
+        commands.caseratis.Commands.pwing(msg, channel);
 
-        commands.Al.psing(msg, channel);
+        commands.katekat.Commands.psing(msg, channel);
 
-        commands.Ca.pwing(msg, channel);
+        commands.lwbuchanan.Commands.pzing(msg, channel);
 
-        commands.Si.pling(msg, channel);
+        commands.notahackr.Commands.poing(msg, channel);
 
-        commands.ray.Master.messageReceived(msg, channel, event);
+        commands.redmario.Commands.pxing(msg, channel);
+
+        commands.thebriankong.Commands.paing(msg, channel);
+
+        commands.thebuttermatrix.Commands.ping(msg, channel);
+        commands.thebuttermatrix.Commands.countdown(msg, channel);
+        commands.thebuttermatrix.Commands.pid(msg, channel);
+
+        commands.raybipse.Master.messageReceived(msg, channel, event);
     }
 }

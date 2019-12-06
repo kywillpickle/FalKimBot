@@ -1,4 +1,4 @@
-package commands.ray;
+package commands.raybipse;
 
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -10,7 +10,7 @@ public class Binder extends Master {
 
     private static Dictionary<String, String> bindings = new Hashtable<String, String>();
     private static Logger bindLogger = new Logger("bindings", "src" + fileSeparator + "main" + fileSeparator + "java"
-            + fileSeparator + "commands" + fileSeparator + "ray" + fileSeparator + "resources", false, false);
+            + fileSeparator + "commands" + fileSeparator + "raybipse" + fileSeparator + "resources", false, false);
     private static String bindSyntax = "&bind (index) (value)";
     private static String unbindSyntax = "&unbind (index)";
     private static String clearSyntax = "&bind_clear";

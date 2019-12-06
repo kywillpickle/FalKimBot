@@ -1,4 +1,4 @@
-package commands.ray;
+package commands.raybipse;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
