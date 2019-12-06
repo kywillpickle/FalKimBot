@@ -6,6 +6,7 @@
    ## Version I
 0. First barely functional instance of the bot
 1. Bot configured (and secured) with some basic commands
+2. Updated hierarchy for 2020 season
 
 ## Making a Key class:
 - Make a new folder in `java/` named `key`. Then, create a new .java file in that folder named `Key.java`.  
